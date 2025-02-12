@@ -1,0 +1,82 @@
+@font-face {
+    font-family: "roboto";
+    src: url('assets/fonts/Roboto-Black.ttf');
+  }
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+
+    align-items: center;
+    background-image: url('assets/images/ramadan.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .countdown-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    margin-left: 2rem;
+    padding: 20px;
+    font-family: 'roboto';
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    margin-right: auto; 
+  }
+  
+  
+  h1 {
+    font-size: 33px;
+    margin-bottom: 10px;
+  }
+  
+  #hijri-date {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  #countdown {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .time-box {
+    width: 80px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #6200ea;
+    margin: 0 10px;
+    text-align: center;
+    animation: bounce 1.5s infinite;
+  }
+  
+  .time-box span {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  p {
+    margin: 5px 0 0;
+    font-size: 14px;
+  }
+  .daysofweek{
+    margin-bottom: 3rem;
+  }
+  .timing{
+    margin-top: 2rem;
+  }
+
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
