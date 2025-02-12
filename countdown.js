@@ -1,5 +1,6 @@
 const ramadanDate = new Date("2025-03-01T00:00:00+05:00").getTime(); 
 const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 function updateCountdown() {
   const now = new Date().getTime();
   const timeLeft = ramadanDate - now;
@@ -26,13 +27,13 @@ function displayHijriDate() {
   document.getElementById("hijri-date").innerText = `Hijri Date: ${hijriYear} AH`;
 }
 
-
 function displayDayOfWeek() {
   const today = new Date();
   const dayOfWeek = daysOfWeek[today.getDay()];
   document.getElementById("day-of-week").innerText = `Today is: ${dayOfWeek}`;
 }
 
+// Start the countdown and display the dates
 setInterval(updateCountdown, 1000);
 displayHijriDate();
 displayDayOfWeek();
