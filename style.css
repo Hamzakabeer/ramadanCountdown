@@ -104,7 +104,8 @@ p {
     }
 
     #countdown {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
     }
 
@@ -117,7 +118,13 @@ p {
         font-size: 25px;
     }
 }
-
+@media (max-width: 600px) {
+    #countdown {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
 @media (max-width: 480px) {
     h1 {
         font-size: 24px;
@@ -128,7 +135,8 @@ p {
     }
 
     #countdown {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
     }
 
