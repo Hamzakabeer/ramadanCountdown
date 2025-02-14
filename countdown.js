@@ -1,9 +1,9 @@
-const ramadanDate = new Date("2025-03-01T00:00:00+05:00").getTime(); 
-const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let ramadanDate = new Date("2025-03-01T00:00:00+05:00").getTime(); 
+let daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function updateCountdown() {
-  const now = new Date().getTime();
-  const timeLeft = ramadanDate - now;
+  let now = new Date().getTime();
+  let timeLeft = ramadanDate - now;
   if (timeLeft <= 0) {
     document.getElementById("days").innerText = "0";
     document.getElementById("hours").innerText = "0";
@@ -11,10 +11,10 @@ function updateCountdown() {
     document.getElementById("seconds").innerText = "0";
     return;
   }
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
   document.getElementById("days").innerText = days;
   document.getElementById("hours").innerText = hours;
@@ -23,17 +23,17 @@ function updateCountdown() {
 }
 
 function displayHijriDate() {
-  const hijriYear = 1446;
+  let hijriYear = 1446;
   document.getElementById("hijri-date").innerText = `Hijri Date: ${hijriYear} AH`;
 }
 
 function displayDayOfWeek() {
-  const today = new Date();
-  const dayOfWeek = daysOfWeek[today.getDay()];
+  let today = new Date();
+  let dayOfWeek = daysOfWeek[today.getDay()];
   document.getElementById("day-of-week").innerText = `Today is: ${dayOfWeek}`;
 }
 
-// Start the countdown and display the dates
+
 setInterval(updateCountdown, 1000);
 displayHijriDate();
 displayDayOfWeek();
