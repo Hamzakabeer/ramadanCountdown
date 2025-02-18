@@ -172,7 +172,7 @@ p {
 
 @media (max-width: 360px) {
     .time-box {
-        width: 45px;
+        width: 50px;
         padding: 4px;
     }
     h1 {
@@ -189,7 +189,7 @@ p {
         padding: 10px;
     }
     .time-box {
-        width: 40px;
+        width: 45px;
         padding: 3px;
     }
     h1 {
