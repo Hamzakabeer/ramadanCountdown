@@ -1,31 +1,35 @@
-   @font-face {
+@font-face {
     font-family: "roboto";
     src: url('assets/fonts/Roboto-Black.ttf');
 }
+
 
 body {
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-start;  
     align-items: center;
     background-image: url('assets/images/ramadan.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .countdown-container {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
-    margin-left: 2rem;
     padding: 20px;
-    font-family: 'roboto';
+    font-family: 'roboto', sans-serif;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    margin-right: auto; 
+    width: 80%;
+    max-width: 500px;
+    margin-left: 2rem;
 }
+
 
 h1 {
     font-size: 33px;
@@ -37,9 +41,18 @@ h1 {
     margin-bottom: 20px;
 }
 
+#today {
+    margin-top: 10px; 
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #ffe4d2;
+}
+
+
 #countdown {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .time-box {
@@ -47,7 +60,7 @@ h1 {
     padding: 10px;
     border-radius: 5px;
     background-color: #6200ea;
-    margin: 0 10px;
+    margin: 10px;
     text-align: center;
     animation: bounce 1.5s infinite;
 }
@@ -62,13 +75,48 @@ p {
     font-size: 14px;
 }
 
-.daysofweek {
-    margin-bottom: 3rem;
-}
 
 .timing {
-    margin-top: 2rem;
+    background: rgba(85, 83, 83, 0.7);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(154, 153, 153, 0.4);
+    font-size: 18px;
+    max-width: 450px;
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 30px;
 }
+
+.timing p {
+    margin: 12px 0;
+    font-size: 18px;
+    color: #ffe4d2;
+}
+
+.timing span, 
+.timing .iftar-time span, 
+.timing .sehri-time span, 
+.timing .date-highlight {
+    color: #efe1a6dc;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.timing .sehri-title, 
+.timing .iftar-title {
+    font-size: 22px;
+    color: #efe1a6dc;
+    font-weight: bold;
+}
+
+.timing:hover {
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
 
 @keyframes bounce {
     0%, 100% {
@@ -79,7 +127,6 @@ p {
     }
 }
 
-/* Media Queries for responsiveness */
 
 @media (max-width: 768px) {
     body {
@@ -118,13 +165,28 @@ p {
         font-size: 25px;
     }
 }
-@media (max-width: 600px) {
+
+@media screen and (max-width: 600px) {
+    .countdown-container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     #countdown {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
     }
+
+    .timing {
+        width: 95%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
+
+
 @media (max-width: 480px) {
     h1 {
         font-size: 24px;
@@ -154,11 +216,53 @@ p {
         font-size: 12px;
     }
 
-    .daysofweek {
-        margin-bottom: 1.5rem;
+    .timing {
+        margin-top: 1.5rem;
+    }
+}
+
+
+@media (max-width: 400px) {
+    .countdown-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .time-box {
+        width: 50px;
+        padding: 5px;
+        font-size: 18px;
     }
 
     .timing {
-        margin-top: 1.5rem;
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+
+@media (max-width: 300px) {
+    .countdown-container {
+        width: 98%;
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .time-box {
+        width: 45px;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    .timing {
+        width: 85%;
+        padding: 8px;
     }
 }
