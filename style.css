@@ -175,7 +175,7 @@ p {
 
 @media (max-width: 360px) {
     .time-box {
-        width: 40px;
+        width: 46px;
         padding: 3px;
     }
     h1 {
@@ -192,7 +192,7 @@ p {
         padding: 8px;
     }
     .time-box {
-        width: 35px;
+        width: 45px;
         padding: 2px;
     }
     h1 {
