@@ -15,6 +15,20 @@ body {
     background-repeat: no-repeat;
     overflow: hidden;
 }
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Move countdown container to the left on large screens */
+    align-items: center;
+    background-image: url('assets/images/ramadan.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
 .countdown-container {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
@@ -25,24 +39,10 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     width: 80%;
     max-width: 500px;
-    margin-left: 2rem; /* Add left margin for larger screens */
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.timing {
-    background: rgba(85, 83, 83, 0.7);
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: left; /* Keep text aligned to the left */
-    box-shadow: 0px 4px 15px rgba(154, 153, 153, 0.4);
-    font-size: 18px;
-    max-width: 450px;
-    width: 100%;
-    margin-top: 30px;
-    align-self: center; /* Ensure it remains centered within the countdown-container */
 }
 
 h1 {
@@ -123,21 +123,23 @@ p {
 /* Responsive Design */
 @media (max-width: 768px) {
     .countdown-container {
-        width: 100%; /* Remove side spaces */
-        margin-left: 0; /* Remove left margin for small screens */
+        width: 90%; /* Adjust width dynamically */
+        margin-left: 0;
     }
 }
 
 @media (max-width: 500px) {
     .countdown-container {
-        width: 100%; /* Ensure full width on small screens */
-        margin-left: 0; /* Remove left margin for small screens */
-        margin-right: 0; /* Remove right margin for small screens */
+        width: 95%; /* Shrinks more for smaller screens */
+        max-width: 90vw; /* Ensures it doesn't exceed viewport width */
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-@media (min-width: 501px) {
+@media (max-width: 400px) {
     .countdown-container {
-        margin-left: 2rem; /* Add left margin for large screens */
+        width: 98%; /* Almost full width */
+        max-width: 90vw; /* Ensures it remains fluid */
     }
 }
