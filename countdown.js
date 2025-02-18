@@ -10,18 +10,11 @@ let firstIftarTime = new Date("2025-03-01T18:45:00+05:00");
 function updateCountdown() {
   let now = new Date().getTime();
   let timeLeft = ramadanDate - now;
-  if (timeLeft <= 0) {
-    document.getElementById("days").innerText = "0";
-    document.getElementById("hours").innerText = "0";
-    document.getElementById("minutes").innerText = "0";
-    document.getElementById("seconds").innerText = "0";
-    return;
-  }
 
-  let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  let days = Math.max(0, Math.floor(timeLeft / (1000 * 60 * 60 * 24)));
+  let hours = Math.max(0, Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+  let minutes = Math.max(0, Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)));
+  let seconds = Math.max(0, Math.floor((timeLeft % (1000 * 60)) / 1000));
 
   document.getElementById("days").innerText = days;
   document.getElementById("hours").innerText = hours;
@@ -74,7 +67,7 @@ function updateIftarCountdown() {
   }
 }
 
-// Function to display the date and day of the first Sehri
+// Function to display the first Sehri date
 function displayFirstSehriInfo() {
   let firstSehriDate = firstSehriTime.toLocaleDateString("en-PK", {
     weekday: "long",
@@ -85,20 +78,34 @@ function displayFirstSehriInfo() {
   document.getElementById("first-sehri-info").innerText = `First Sehri: ${firstSehriDate}`;
 }
 
+// Function to display the first Iftar date
+function displayFirstIftarInfo() {
+  let firstIftarDate = firstIftarTime.toLocaleDateString("en-PK", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  document.getElementById("first-iftar-info").innerText = `First Iftar: ${firstIftarDate}`;
+}
+
 // Function to continuously update Sehri and Iftar countdowns
 function updateSehriIftarCountdown() {
   updateSehriCountdown();
   updateIftarCountdown();
 }
 
-// Start Sehri and Iftar countdown when the user hovers over the countdown section
-document.getElementById("countdown").addEventListener("mouseover", function () {
+// Initialize the page with all required info
+function initializeCountdown() {
+  updateCountdown();
+  displayHijriDate();
+  displayDayOfWeek();
+  displayFirstSehriInfo();
+  displayFirstIftarInfo(); // Added First Iftar Date Display
   updateSehriIftarCountdown();
-  setInterval(updateSehriIftarCountdown, 1000);
-});
 
-// Initialize the page
-setInterval(updateCountdown, 1000); // Update Ramadan countdown every second
-displayHijriDate();
-displayDayOfWeek();
-displayFirstSehriInfo();
+  setInterval(updateCountdown, 1000); // Update countdown every second
+  setInterval(updateSehriIftarCountdown, 1000); // Update Sehri & Iftar countdown every second
+}
+
+initializeCountdown(); // Run everything when the page loads
