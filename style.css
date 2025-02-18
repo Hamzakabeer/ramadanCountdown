@@ -7,9 +7,9 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: flex-start; /* Move countdown container to the left on large screens */
+    justify-content: flex-start;
     align-items: center;
-    background-image: url('assets/images/ramadan.png'); 
+    background-image: url('assets/images/ramadan.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -122,66 +122,50 @@ p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .countdown-container {
         width: 90%;
-        margin-left: 0;
+        margin-left: 1rem;
+    }
+    .time-box {
+        width: 70px;
+        padding: 8px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
     .countdown-container {
         width: 95%;
-        max-width: 90vw;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0;
+        padding: 15px;
+    }
+    .time-box {
+        width: 60px;
+        padding: 6px;
     }
     h1 {
         font-size: 28px;
     }
-    .timing p {
-        font-size: 16px;
-    }
-    .time-box span {
-        font-size: 26px;
-    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .countdown-container {
-        width: 98%;
-        max-width: 95vw;
+        width: 100%;
+        border-radius: 0;
+    }
+    .time-box {
+        width: 50px;
+        padding: 5px;
     }
     h1 {
         font-size: 24px;
     }
-    .timing p {
-        font-size: 14px;
-    }
-    .time-box {
-        width: 70px;
-    }
-    .time-box span {
-        font-size: 22px;
-    }
-}
-
-@media (max-width: 320px) {
-    .countdown-container {
-        width: 100%;
-        max-width: 100vw;
+    .timing {
+        font-size: 16px;
         padding: 15px;
-    }
-    h1 {
-        font-size: 20px;
-    }
-    .timing p {
-        font-size: 12px;
-    }
-    .time-box {
-        width: 60px;
-    }
-    .time-box span {
-        font-size: 18px;
     }
 }
