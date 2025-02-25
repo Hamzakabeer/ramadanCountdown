@@ -114,8 +114,3 @@ initializeCountdown(); // Run everything when the page loads
 
 
 
-
-
-
-
-
